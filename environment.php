@@ -33,7 +33,7 @@ define('APP_VER_ADMIN', 1236841);
 define('CURRENCY', 'TRY');
 
 define('DOMAIN', $domain);
-define('BASE_URL', $domain);
+
 define('SITE', 'polls');
 define('SITE_NAME', 'Polls App');
 define('SITE_DB', 'polls');
@@ -41,18 +41,18 @@ define('UI', 'frontend');
 define('LANG', 'tr');
 define('CURRENCY', 'TRY');
 
-
 switch ($domain) {
     case 'polls.dev':
         $enviroment = 'development';
         break;
-    case 'demo.fibosoft.com/polls_app':
+    case 'demo.fibosoft.com':
         $enviroment = 'testing';
         break;
     default:
         $enviroment = 'production';
 }
 define('ENVIRONMENT', $enviroment);
+define('BASE_URL', 'http://' . $domain . '/polls_app');
 define('THEME', 'main');
 
 $GLOBALS["__LOCALE"] = defined('LANG') ? LANG : 'tr_TR'; // default locale
