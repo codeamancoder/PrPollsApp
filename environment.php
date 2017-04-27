@@ -44,15 +44,19 @@ define('CURRENCY', 'TRY');
 switch ($domain) {
     case 'polls.dev':
         $enviroment = 'development';
+        $base_url = 'http://' . $domain;
         break;
     case 'demo.fibosoft.com':
         $enviroment = 'testing';
+        $base_url = 'http://' . $domain . '/polls_app';
         break;
     default:
         $enviroment = 'production';
+        $base_url = '';
 }
+
 define('ENVIRONMENT', $enviroment);
-define('BASE_URL', 'http://' . $domain . '/polls_app');
+define('BASE_URL', $base_url);
 define('THEME', 'main');
 
 $GLOBALS["__LOCALE"] = defined('LANG') ? LANG : 'tr_TR'; // default locale
